@@ -37,7 +37,6 @@ class Program
                 Console.WriteLine("Programm wird beendet.");
                 break;
             }
-
             Console.WriteLine("Eingegebener Text: " + input);
         }
     }
