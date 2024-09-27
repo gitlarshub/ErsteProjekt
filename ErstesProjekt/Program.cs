@@ -8,7 +8,6 @@ class Program
     static void Main(string[] args)
     {
         string input = ""; 
-
         while (true)
         {
             ConsoleKeyInfo keyInfo;
@@ -16,7 +15,6 @@ class Program
             
             Console.WriteLine("Geben Sie Text ein. Drücken Sie <Enter> zur Anzeige. Geben Sie 'Beenden' ein, um das Programm zu beenden:");
 
-          
             do
             {
                 keyInfo = Console.ReadKey(intercept: true);
@@ -27,8 +25,7 @@ class Program
                     Console.WriteLine(); 
                     break;
                 }
-
-              
+  
                 input += keyInfo.KeyChar;
                 Console.Write(keyInfo.KeyChar);
             }
