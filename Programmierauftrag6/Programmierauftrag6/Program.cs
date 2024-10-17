@@ -48,7 +48,7 @@ namespace MathematischeOperationen
                 { 6, x => Factorial(x) },
                 { 7, x => -x }
             };
-
+            
             if (twoNumberOperations.ContainsKey(operation))
             {
                 int x = GetValidInput("Erste Zahl: ", int.MinValue, int.MaxValue);
