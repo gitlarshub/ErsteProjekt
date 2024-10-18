@@ -1,6 +1,3 @@
-
-Console.WriteLine("Hello, World!");
-
 using System;
 
 class Program
@@ -26,4 +23,3 @@ class Program
         }
     }
 }
-
