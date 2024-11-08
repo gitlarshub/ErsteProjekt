@@ -36,4 +36,35 @@ namespace Objektorientierung7
             _BirthDate = birthdate;
         }
     }
+
+
+    public class Tierheim
+    {
+        private List<Cat> _cats;
+
+        public Tierheim()
+        {
+            _cats = new List<Cat>();
+        }
+        public void AddCat(Cat cat)
+        {
+            _cats.Add(cat);
+        }
+        public List<Cat> GetAllCats()
+        {
+            return _cats;
+        }
+        public int GetCatCount()
+        {
+            return _cats.Count;
+        }
+        public void ListCatsByAge()
+
+        {
+            foreach (var cat in _cats)
+            {
+                Console.WriteLine($"Katze: Farbe = {cat.Color ?? "Unbekannt"}, Alter = {cat.Age} Jahre");
+            }
+        }
+    }
 }
