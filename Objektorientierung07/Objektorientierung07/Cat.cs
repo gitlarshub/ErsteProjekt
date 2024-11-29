@@ -9,25 +9,14 @@ namespace Objektorientierung07
 {
     public class Cat : Animal
     {
-        private DateTime _BirthDate;
         public string? Color { get; set; }
-        public int Age
+
+        public Cat(string name, DateTime birthdate) : base(name, birthdate)
         {
-            get
-            {
-                var today = DateTime.Today;
-                int age = today.Year - _BirthDate.Year;
-                if (_BirthDate > today.AddYears(-age)) age--;
-                return age;
-            }
         }
-        public Cat(string name, DateTime birthdate) : base(name)
+
+        public Cat(DateTime birthdate) : base("Unknown", birthdate)
         {
-            _BirthDate = birthdate;
-        }
-        public Cat(DateTime birthdate) : base("Unknown")
-        {
-            _BirthDate = birthdate;
         }
     }
 }

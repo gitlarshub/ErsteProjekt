@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace Objektorientierung07
 {
-    public class Animal
+    public class Animal : Lebewesen
     {
-        public string Name { get; set; }
+        public string Name { get; }
 
-        public Animal(string name)
-        { 
+        public Animal(string name, DateTime birthdate) : base(birthdate)
+        {
             Name = name;
         }
     }
 }
+
