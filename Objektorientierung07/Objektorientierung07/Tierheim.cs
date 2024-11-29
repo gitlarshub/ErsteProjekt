@@ -30,7 +30,6 @@ namespace Objektorientierung07
             foreach (var cat in _cats)
             {
                 Console.WriteLine($"Katze: Name = {cat.Name}, Farbe = {cat.Color}, Alter = {cat.Age} Jahre");
-
             }
         }
     }

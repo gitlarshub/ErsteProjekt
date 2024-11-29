@@ -9,7 +9,7 @@
 Tierheim tierheim = new Tierheim();
 
 tierheim.AddCat(new Cat("Milo", new DateTime(2018, 5, 20)) { Color = "Schwarz/Weiß" });
-tierheim.AddCat(new Cat("Kitty", new DateTime(2020, 8, 15)) { Color = "Weiß" });
+tierheim.AddCat(new Cat("Mize", new DateTime(2020, 8, 15)) { Color = "Weiß" });
 tierheim.AddCat(new Cat("Max", new DateTime(2016, 3, 10)) { Color = "Grau" });
 
 Console.WriteLine("Katzen im Tierheim:");
