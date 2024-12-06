@@ -8,13 +8,16 @@ namespace Objektorientierung07
 {
     public class Lebewesen
     {
-        private DateTime Birthdate { get; set; }
+        public string Name { get; set; }
+        public string? Color { get; set; }
+        private DateTime Birthdate { get; }
 
-        public Lebewesen(DateTime birthdate)
+        public Lebewesen(string name, DateTime birthdate, string? color = null)
         {
+            Name = name;
             Birthdate = birthdate;
+            Color = color;
         }
-
         public int Age
         {
             get
@@ -27,3 +30,5 @@ namespace Objektorientierung07
         }
     }
 }
+
+
