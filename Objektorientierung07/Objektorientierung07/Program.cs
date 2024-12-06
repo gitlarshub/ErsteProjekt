@@ -1,4 +1,5 @@
 ﻿using Objektorientierung07;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 //Console.WriteLine("Hello World!");
 //Cat myCat = new Cat(new DateTime(2008, 01, 18)); // erstellt eine Instanz der Klasse Cat und weißt sie der Variable mit dem Namen myCat zu
@@ -7,13 +8,22 @@
 //Console.WriteLine( "The age of my Cat is " + myCat.Age + " years");
 
 Tierheim tierheim = new Tierheim();
+List<Animal> cat = new List<Animal>();
 
-tierheim.AddCat(new Cat("Milo", new DateTime(2018, 5, 20)) { Color = "Schwarz/Weiß" });
-tierheim.AddCat(new Cat("Mize", new DateTime(2020, 8, 15)) { Color = "Weiß" });
-tierheim.AddCat(new Cat("Max", new DateTime(2016, 3, 10)) { Color = "Grau" });
+cat.Add(new Cat("Luna", new DateTime(2020, 5, 15)));
+cat.Add(new Cat("Milo", new DateTime(2018, 3, 10)));
+cat.Add(new Cat("Tom", new DateTime(2019, 7, 25)));
 
 Console.WriteLine("Katzen im Tierheim:");
 tierheim.ListCatsByAge();
 
-Console.WriteLine($"Anzahl der Katzen im Tierheim: {tierheim.GetCatCount()}");
- 
+foreach (var animal in cat)
+{
+    if (animal is Cat katze)
+    {
+        Console.WriteLine($"Die Katze hat {katze.Beine} Beine.");
+
+        Console.WriteLine("Der typische Laut von der Katze ist:");
+        katze.GibTypischenLautVonDir();
+    }
+}
