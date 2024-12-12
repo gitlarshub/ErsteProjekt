@@ -9,13 +9,14 @@ namespace Objektorientierung07
 {
     public class Cat : Animal
     {
+        public string? Color { get; set; }
         public Cat(string name, DateTime birthdate) : base(name, birthdate)
         {
             Beine = 4; 
         }
         public override void GibTypischenLautVonDir()
         {
-            Console.WriteLine($"{Name} sagt: Miau!");
+            Console.WriteLine($"{Name} sagt: Miau");
         }
     }
 }
