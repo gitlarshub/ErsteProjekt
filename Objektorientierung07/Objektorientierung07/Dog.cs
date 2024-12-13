@@ -8,8 +8,10 @@ namespace Objektorientierung07
 {
     public class Dog : Animal
     {
-        public Dog(string name, DateTime birthdate) : base(name, birthdate)
+        public string? Color { get; set; }
+        public Dog(string name, string color, DateTime birthdate) : base(name, birthdate)
         {
+            Color = color;
             Beine = 4;
         }
         public override void GibTypischenLautVonDir()

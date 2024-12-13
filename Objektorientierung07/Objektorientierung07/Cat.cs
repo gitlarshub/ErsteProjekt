@@ -10,8 +10,9 @@ namespace Objektorientierung07
     public class Cat : Animal
     {
         public string? Color { get; set; }
-        public Cat(string name, DateTime birthdate) : base(name, birthdate)
+        public Cat(string name, string color, DateTime birthdate) : base(name, birthdate)
         {
+            Color = color;
             Beine = 4; 
         }
         public override void GibTypischenLautVonDir()
