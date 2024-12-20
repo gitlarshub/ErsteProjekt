@@ -8,7 +8,7 @@ namespace Objektorientierung07
 {
     public class Tierheim
     {
-        private List<Animal> _animals; // Alle Tiere werden hier gespeichert
+        private List<Animal> _animals;
 
         public Tierheim()
         {
@@ -43,13 +43,15 @@ namespace Objektorientierung07
         {
             return _animals.OfType<Dog>().Count();
         }
-        public void ListCatsByAge()
+        public double GetAverageAge()
         {
-            var cats = _animals.OfType<Cat>();
-            foreach (var cat in cats)
+            if (_animals.Count == 0)
             {
-                Console.WriteLine($"Katze: Name = {cat.Name}, Farbe = {cat.Color}, Alter = {cat.Age} Jahre");
+                return 0;
             }
+
+            double totalAge = _animals.Sum(animal => animal.Age);
+            return totalAge / _animals.Count;
         }
     }
 

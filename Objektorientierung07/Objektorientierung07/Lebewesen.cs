@@ -9,14 +9,11 @@ namespace Objektorientierung07
     public class Lebewesen
     {
         public string Name { get; set; }
-        public string? Color { get; set; }
         private DateTime Birthdate { get; }
-
         public Lebewesen(string name, DateTime birthdate, string? color = null)
         {
             Name = name;
             Birthdate = birthdate;
-            Color = color;
         }
         public int Age
         {
