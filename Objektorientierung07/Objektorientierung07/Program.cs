@@ -1,19 +1,31 @@
 ﻿using Objektorientierung07;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
-//Console.WriteLine("Hello World!");
-//Cat myCat = new Cat(new DateTime(2008, 01, 18)); // erstellt eine Instanz der Klasse Cat und weißt sie der Variable mit dem Namen myCat zu
-//myCat.Color = "black";
-//Console.WriteLine("The color of my Cat is " + myCat.Color);
-//Console.WriteLine( "The age of my Cat is " + myCat.Age + " years");
 
 Tierheim tierheim = new Tierheim();
+List<Animal> cat = new List<Animal>();
 
-tierheim.AddCat(new Cat("Milo", new DateTime(2018, 5, 20)) { Color = "Schwarz/Weiß" });
-tierheim.AddCat(new Cat("Mize", new DateTime(2020, 8, 15)) { Color = "Weiß" });
-tierheim.AddCat(new Cat("Max", new DateTime(2016, 3, 10)) { Color = "Grau" });
+tierheim.AddAnimal(new Cat("Luna", "weiß", new DateTime(2020, 5, 15)));
+tierheim.AddAnimal(new Cat("Milo", "grau", new DateTime(2018, 3, 10)));
+tierheim.AddAnimal(new Cat("Tom", "schwarz/weiß", new DateTime(2019, 7, 25)));
 
-Console.WriteLine("Katzen im Tierheim:");
-tierheim.ListCatsByAge();
+tierheim.AddAnimal(new Dog("Burak", "braun", new DateTime(2017, 6, 5)));
+tierheim.AddAnimal(new Dog("Fritz", "schwarz", new DateTime(2021, 1, 20)));
 
+Console.WriteLine($"Gesamte Tieranzahl im Tierheim: {tierheim.GetAnimalCount()}");
 Console.WriteLine($"Anzahl der Katzen im Tierheim: {tierheim.GetCatCount()}");
- 
+Console.WriteLine($"Anzahl der Hunde im Tierheim: {tierheim.GetDogCount()}");
+
+Console.WriteLine($"\n Das Durchschnittsalter aller Tiere ist: {tierheim.GetAverageAge():0.00} Jahre");
+
+Console.WriteLine("\nTiere im Tierheim:");
+foreach (var animal in tierheim.GetAllAnimals())
+{
+    Console.WriteLine($"Tier: Art = {animal.GetType().Name}, Name = {animal.Name}, Beine = {animal.Beine}");
+}
+
+Console.WriteLine("\nTypische Laute der Tiere:");
+foreach (var animal in tierheim.GetAllAnimals())
+{
+    animal.GibTypischenLautVonDir();
+}

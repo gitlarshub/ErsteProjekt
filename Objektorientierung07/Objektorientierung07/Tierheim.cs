@@ -8,29 +8,51 @@ namespace Objektorientierung07
 {
     public class Tierheim
     {
-        private List<Cat> _cats;
+        private List<Animal> _animals;
+
         public Tierheim()
         {
-            _cats = new List<Cat>();
+            _animals = new List<Animal>();
+        }
+
+        public void AddAnimal(Animal animal)
+        {
+            _animals.Add(animal);
         }
         public void AddCat(Cat cat)
         {
-            _cats.Add(cat);
+            _animals.Add(cat);
         }
-        public List<Cat> GetAllCats()
+        public void AddDog(Dog dog)
         {
-            return _cats;
+            _animals.Add(dog);
+        }
+        public List<Animal> GetAllAnimals()
+        {
+            return _animals;
+        }
+        public int GetAnimalCount()
+        {
+            return _animals.Count;
         }
         public int GetCatCount()
         {
-            return _cats.Count;
+            return _animals.OfType<Cat>().Count();
         }
-        public void ListCatsByAge()
+        public int GetDogCount()
         {
-            foreach (var cat in _cats)
+            return _animals.OfType<Dog>().Count();
+        }
+        public double GetAverageAge()
+        {
+            if (_animals.Count == 0)
             {
-                Console.WriteLine($"Katze: Name = {cat.Name}, Farbe = {cat.Color}, Alter = {cat.Age} Jahre");
+                return 0;
             }
+
+            double totalAge = _animals.Sum(animal => animal.Age);
+            return totalAge / _animals.Count;
         }
     }
+
 }
